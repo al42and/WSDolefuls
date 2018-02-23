@@ -42,8 +42,8 @@ def submit_job():
 
 def request_image(jobid):
     ret = post_req('request_image.xml', URL=URL, JOBID=jobid)
-    ret = parse_multipart(ret)
-    for part in ret:
+    ret_parts = parse_multipart(ret)
+    for part in ret_parts:
         if part.get_content_type() == 'image/jpeg':
             return part.get_payload(decode=True)
     raise Exception('Can not parse response')
@@ -52,8 +52,7 @@ def request_image(jobid):
 if jobid is None:
     # Submit new job
     jobid = submit_job()
-    print ('Submitted job', jobid, ', sleeping...')
-    time.sleep(15)
+    print ('Submitted job', jobid, ', waiting for reply...')
 
 image_data = request_image(jobid)
 open(output, 'wb').write(image_data)
