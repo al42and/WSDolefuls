@@ -1,6 +1,14 @@
 # WSDolefuls
 Working with WSD scanner from Linux
 
+# This project is abandoned
+
+I was moving and sold the printer/scanner that inspired me to start this adventure. Now, I don't have a device to do any testing, and WSD was never a thing that sparked joy in me.
+
+Feel free to use this code for reference, or take a look at [Patrick Roncagliolo's project](https://github.com/roncapat/WSD-python), that is actively developed and better written.
+
+# Description
+
 Currently, it is single script that can scan an image using default settings.
 Nothing fancy, quite contrary.
 
